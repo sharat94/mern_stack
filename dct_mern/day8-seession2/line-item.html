@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Line Item </title>
+  </head>
+  <body>
+    <h2>Line Items</h2>
+    <table border='1'>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Marker</td>
+          <td id='price'>12</td>
+          <td><button id='decrement'> - </button><span id='quantity'>1</span><button id='increment'>+</button></td>
+          <td id='total'>12</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+  <script>
+    var count = 1;
+    var priceHandle = document.getElementById('price');
+    var totalHandle = document.getElementById('total');
+    var incrementHandle = document.getElementById('increment'); 
+    var decrementHandle = document.getElementById('decrement');
+    var quantityHandle = document.getElementById('quantity');
+    var price = parseInt(priceHandle.innerText);
+    incrementHandle.onclick = function(){
+      quantityHandle.innerText = ++count;
+      totalHandle.innerText = (price * count);
+    };
+    decrementHandle.onclick = function(){
+      quantityHandle.innerText = --count;
+      totalHandle.innerText = (price * count);
+    };
+  </script>
+</html>

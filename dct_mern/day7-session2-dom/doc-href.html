@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title> A HREF</title>
+    </head>
+    <body>
+      <div id="root">
+        <!--<a href="http://www.dctacademy.com"
+        target="_blank">DCT Academy</a>-->
+      </div>
+      <script>
+        var rootHandle = document.getElementById('root');
+        var a = document.createElement('a');
+        var text = document.createTextNode('DCT Academy');
+        var href = document.createAttribute('href');
+        href.value = 'http://www.dctacademy.com';
+        // href = "http://www.dctacademy.com"
+
+        var target = document.createAttribute('target');
+        target.value = '_blank';
+
+        a.setAttributeNode(href);
+        a.setAttributeNode(target);
+
+        a.appendChild(text);
+
+        rootHandle.appendChild(a);
+
+        //React.createElement('a',{href: 'http://wwww.dctacademy.com', target: '_blank'}, 'DCT Academy')
+
+        //React JSX
+        // var aTag = <a href='http://wwww.dctacademy.com' target="_blank">DCT Academy</a>
+      </script>
+    </body>
+</html>

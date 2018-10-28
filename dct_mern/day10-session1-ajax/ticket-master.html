@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <h1> Ticket Master </h1>
+    <h2>Listing Tickets - <span id="count"></span></h2>
+    <table border='1'>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Priority</th>
+          <th>Message</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id='tableBody'>
+          <IMG SRC="loading.gif" width='70px' id='gif'>
+      </tbody>
+    </table>
+    <progress value='0' id='progress' max='100'></progress>
+
+  <form id="ticketForm">
+
+      <label for="name">
+          Name
+      </label>
+      <input type="text" name="name" id="name" /> <br/>
+
+      <label for="department">
+          Department
+      </label>
+      <select id="department">
+          <option value=""> Select Department</option>
+          <option value="Technical">Technical</option>
+          <option value="Sales">Sales</option>
+          <option value="Hr"> Hr </option>
+      </select> <br/>
+
+      <label> Priority </label>
+      <input type="radio" id="high" value="High" name="priority" /> <label for="high"> High </label>
+      <input type="radio" id="medium" value="Medium" name="priority" /> <label for="medium"> Medium </label>
+      <input type="radio" id="low" value="Low" name="priority" /> <label for="low"> Low </label>
+      <br/>
+
+      <label for="message"> Message </label>
+      <textarea id="message" name="message"> </textarea>
+      <br/>
+
+      <input type="submit" value="submit" /> 
+      <input type="reset" value="reset" />
+  </form>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+</body>
+</html>

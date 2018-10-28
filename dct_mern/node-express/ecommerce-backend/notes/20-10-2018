@@ -1,0 +1,38 @@
+1. create folders
+
+/app
+/app/controllers
+/app/models
+/app/views
+/app/middlewares
+/config
+
+create files
+
+/config/db.js
+/config/routes.js
+2. create app/models/book.js
+
+3. create app/controllers/books_controller.js
+
+4 create 
+
+
+
+//Get localhost:3000/movies
+
+//GET localhost:3000/movies/1
+
+1. model - Movie 
+  object prototype function 
+  with properties - name, genre
+
+  define static variable = calling it as data and return an array of your favourite movies
+
+  define static method - all() -> return the array
+                       - findById(id) -> return the movie object
+  export the movie model files
+
+  2. create movies_controller.js
+    require Movie model and define the working of routes
+    router.get('/')

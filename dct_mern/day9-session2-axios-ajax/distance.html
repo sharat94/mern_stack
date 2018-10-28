@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>
+        Determine Distance
+      </title>
+      <script src=''></script>
+    </head>
+    <body>
+      <div id='root'>
+        <h2> Determine Distance between 2 places</h2>
+        <form id='myForm'>
+          <label for='source'> Source </label>
+          <input type='text' name='source' id='source' />
+          <br/>
+          <label for='destination'>Destination</label>
+          <input type='text' name='destination' id='destination' /><br/>
+          <input type='submit' value='find distance' />
+        </form>
+
+        <h2> Output </h2>
+        <p>
+          The distance between <span id= 'show_origin'> nothing </span> and <span id= 'show_destination'> nothing </span> is <span id= 'distance'> 0 </span> and it takes <span id= 'time'> 0 hrs </span> to travel.
+        </p>
+      </div>
+      <!-- <script src="myfile.js"></script>  -->
+      <script>
+        var myFormHandle = document.getElementById('myForm');
+        var sourceHandle = document.getElementById('source');
+        var destinationHandle = document.getElementById('destination');
+        var distanceHandle = document.getElementById('distance');
+        var timeHandle = document.getElementById('time');
+        var originHandle = document.getElementById('show_origin');
+        var destinationPrintHandle = document.getElementById('show_destination');
+
+        // var xhr = new MyXhr('get', url ); 
+        // xhr.get(); 
+
+        myFormHandle.addEventListener('submit', function(e){
+          e.preventDefault();
+          var url =
+          `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${sourceHandle.value}&destinations=${destinationHandle.value}&departure_time=now&key=AIzaSyA9ucRErmbgXAaCr976KtcW3MKV0QI7HyA`
+          var myXhr = new Promise((resolve, reject) => {
+            var xhr = new XMLHttpRequest(); 
+            xhr.open('GET', url);
+            xhr.onload = function(){
+              resolve(JSON.parse(xhr.responseText)); 
+            }
+            xhr.send(); 
+          }); 
+
+          myXhr.then((data) => {
+            distanceHandle.innerHTML = data.rows[0].elements[0].distance.text;
+            timeHandle.innerHTML = data.rows[0].elements[0].duration.text;
+            originHandle.innerHTML = data.origin_addresses[0];
+            destinationPrintHandle.innerHTML = data.destination_addresses[0];
+            myFormHandle.reset();
+          })
+        })
+      </script>
+    </body>
+  </html>

@@ -1,0 +1,16 @@
+{
+  "name": "day6-session2-object-prototypes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "validator": "^10.7.1"
+  }
+}

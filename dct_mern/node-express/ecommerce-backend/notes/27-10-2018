@@ -1,0 +1,56 @@
+categories
+_id: ObjectId
+name: string
+
+
+products
+_id: objectId
+name: string
+price: number
+description: String
+codEligible: Boolean
+stock: Number
+
+users
+_id: ObjectId
+username: String
+password: String
+email: String
+mobile: String
+cartLines: [
+  {
+    product: ObjectId,
+    quantity: Number
+  }
+]
+
+address:
+_id: ObjectId,
+first_line: String,
+second_line: String
+
+orders
+_id: Number
+order_number: String
+order_date: String
+user: objectId
+address: objectId
+total: number
+orderItems: [
+  {
+    product: ObjectId,
+    quantity: Number,
+    price: Number
+  }
+]
+
+products
+
+reviews: [
+  {
+    title: String
+    Body: String
+    rating: Number
+    user: ObjectId
+  }
+]

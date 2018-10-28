@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Count Up & Down </title>
+  </head>
+  <body>
+    <h2> Count - <span id="value">0</span></h2>
+    <button id="up"> Up </button><button id="down">Down</button>
+  </body>
+  <script>
+    var count = 0;
+    var upHandle = document.getElementById('up');
+    var downHandle = document.getElementById('down');
+    var valueHandle = document.getElementById('value')
+    upHandle.onclick = function(){
+      valueHandle.innerText = ++count;
+    };
+    // downHandle.onclick = function(){
+    //   if (valueHandle.innerText == 0){
+    //     return;
+    //   }
+    //   valueHandle.innerText = --count;
+    // };
+    downHandle.addEventListener('click',function(){
+      count--;
+      valueHandle.innerText = count;
+    }, false);
+  </script>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Task List </title>
+  </head>
+  <body>
+    <h1>Listing Tasks</h1>
+    <progress max="100" value="25"></progress>
+    <p> here is the list of all the tasks that are to be completed</p>
+
+    <ul>
+      <li>Go for a walk</li>
+      <li>Watch for a movie</li>
+    </ul>
+
+    <h2> Completed Tasks </h2>
+    <ol>
+      <li><s>Take the dog for a walk</s></li>
+    </ol>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Sl</th>
+          <th>Name</th>
+          <th>Linkk</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td> Facebook </td>
+          <td> <a href="http://www.facebook.com" target="_blank">www.facebook.com</a></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td> Github </td>
+          <td> <a href="http://www.github.com" target="_blank">www.github.com</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2> Contact Form </h2>
+    <form>
+      <label for="first_name">First Name</label> <br/>
+      <input type="text" name="first_name" id="first_name"/><br>
+
+      <label for="last_name">Last Name</label> <br/>
+      <input type="text" name="last_name" id="last_name"/><br>
+
+      <label for="dob">Date of Birth </label> <br/>
+      <input type="datetime-local" name="dob" id="dob"/><br>
+
+      <label for="password"> Password </label> <br/>
+      <input type="password" name="password" id="password"/><br>
+
+      <label for="email"> Email</label> <br/>
+      <input type="email" name="email"  id="email"/><br>
+
+      <label for="message">Message</label> <br/>
+      <textarea name="message"  id="message"/><br>
+
+      <label for="mobile"> Mobile Number</label> <br/>
+      <input type="number" name="mobile"  id="mobile"/><br>
+
+      <label> Background</label><br/>
+      <select name="background">
+        <option value="">Select</option>
+        <option value="working">Working</option>
+        <option value="student">Student</option>
+        <option value="freelancer">Free Lancer</option>
+      </select><br/>
+
+      <label>Gender</label>
+      <input type="radio" id="male" name="gender" checked/><label for="male">Male</label>
+      <input type="radio" id="female" name="gender" />
+      <label for="female">Female</label><br/>
+
+      <input type="checkbox" id="tnc" name="tnc"/><label for="tnc">I Accept</label> 
+
+      <input type="submit" value="submit form" />
+    </form>
+
+    <script>
+      console.log(2+2);
+    </script>
+  </body>
+</html>

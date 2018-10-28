@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    User Login
+  </head>
+  <body>
+    <label>Name</label>
+    <input type='text' id='text' /><br/>
+
+    <label>Email</label>
+    <input type='email' id='email' /><br/>
+
+    <a href='http://www.google.com' id='link' target="_blank">
+    <br/>
+
+  </body>
+  <script>
+    var textHandle = document.getElementById('text');
+    textHandle.addEventListener('focus',function(){
+      console.log('you are inside the field.')
+    }, false);
+    textHandle.addEventListener('blur', function(){
+      console.log('value', textHandle.value);
+      if(textHandle.value == ''){
+        console.log('this field is required.')
+      }
+      console.log('you are outside the text field.')
+    }, false);
+    
+    linkHandle.addEventListener('click', function(e){
+      console.log(e);
+      e.preventDefault();
+    }, false);
+  </script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Listing Items </title>
+  </head>
+  </html>
+  <body>
+    <div id="root">
+      <h2>Listing Fruits - <span id="count"></span></h2>
+      <ul id="list">
+      </ul>
+      <h2>Listing Social Links - <span id="link_count"></span></h2>
+      <ul id="linkList">
+      </ul>
+      <script>
+        var fruits = ['apple', 'watermelon', 'mango', 'strawberry'];
+        var links = [
+          {website: 'facebook', link: 'http://www.facebook.com'},
+          {website: 'github', link: 'http://www.github.com'}
+        ];
+        var linkCountHandle = document.getElementById('link_count'); 
+        var countHandle = document.getElementById('count');
+        var listHandle = document.getElementById('list');
+        var linkList = document.getElementById('linkList'); 
+        countHandle.innerText = fruits.length;
+        linkCountHandle.innerText = links.length;
+        fruits.sort().forEach(function(fruit){
+          var li = document.createElement('li');
+          var text = document.createTextNode(fruit);
+          li.appendChild(text);
+          listHandle.appendChild(li);
+        })
+        links.forEach(function(link){
+          var a = document.createElement('a');
+          var text = document.createTextNode(link.website);
+          a.appendChild(text);
+          a.setAttribute('href', link.link);
+          linkList.appendChild(a);
+        })
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dynamic Select</title>
+  </head>
+  <body>
+    <h2>Add Task</h2>
+
+    <form id="task">
+      <label>Client</label>
+      <select id="client">
+        <option value = ''> Select Value </option>
+      </select></br>
+
+      <label>Projects</label>
+        <select id="projects">
+          <option value = ''> Select Value </option>
+        </select>
+    </form> 
+  </body>
+    
+  <script>
+    var clients = [
+      {id: 1, name: 'ABC Enterprises'},
+      {id: 2, name: 'DEF Ltd.'},
+      {id: 3, name: 'XYZ LLP'}
+    ];
+
+    var projects = [
+      {id: 1, clientId: 1, name: 'Project 1'},
+      {id: 2, clientId: 1, name: 'Project 2'},
+      {id: 3, clientId: 2, name: 'Project 3'}
+    ];
+
+    var clientHandle = document.getElementById('client');
+    clients.forEach(function(client){
+      var option = document.createElement('option');
+      option.setAttribute('value', client.id);
+      var text = document.createTextNode(client.name);
+      option.appendChild(text);
+      clientHandle.appendChild(option);
+    });
+
+    var projectHandle = document.getElementById('projects');
+    
+    var projectBuilder = function(projects){
+      projects.forEach(function(project){
+      var option = document.createElement('option');
+      option.setAttribute('value', project.id);
+      var text = document.createTextNode(project.name);
+      option.appendChild(text);
+      projectHandle.appendChild(option);
+    });
+    } 
+
+
+    projectBuilder(projects);
+    // projects.forEach(function(project){
+    //   var option = document.createElement('option');
+    //   option.setAttribute('value', project.id);
+    //   var text = document.createTextNode(project.name);
+    //   option.appendChild(text);
+    //   projectHandle.appendChild(option);
+    // });
+    
+    
+    clientHandle.addEventListener('change', function(){
+      var result = projects.filter(function(project){
+        return project.clientId == clientHandle.value;
+      });
+      projectHandle.innerHTML = '';
+      projectBuilder(result);
+      console.log(result);
+    }, false);
+  </script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Listing Items </title>
+  </head>
+  </html>
+  <body>
+    <div id="root">
+      <h2>Listing Tickets - <span id="count"></span></h2>
+      <ul id="list">
+      </ul>
+      <script>
+       var url = 'http://dct-api-data.herokuapp.com/tickets?api_key=b770c42d94398f31'
+       fetch(url).then((resp) => resp.json()).then(function(response){
+         var tickets = response;
+         debugger;
+        var countHandle = document.getElementById('count');
+        var listHandle = document.getElementById('list');
+        countHandle.innerText = tickets.length;
+        tickets.forEach(function(ticket){
+          var li = document.createElement('li');
+          var text = document.createTextNode(ticket.ticket_code);
+          li.appendChild(text);
+          listHandle.appendChild(li);
+        })
+       })
+      </script>
+    </div>
+  </body>
+</html>
